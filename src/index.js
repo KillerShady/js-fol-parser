@@ -1,6 +1,6 @@
 import { parse, SyntaxError } from './parser'
 
-import startRules from './parser/startRules'
+import * as startRules from './parser/startRules'
 
 export { parse, SyntaxError }
 

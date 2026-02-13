@@ -1,28 +1,28 @@
-const Term = 'Term';
+export const Term = 'Term';
 
-const FormulaStrict = 'FormulaStrict';
+export const FormulaStrict = 'FormulaStrict';
 
-const FormulaWithPrecedence = 'FormulaWithPrecedence';
+export const FormulaWithPrecedence = 'FormulaWithPrecedence';
 
-const Clause = 'Clause';
+export const Clause = 'Clause';
 
-const Constants = 'Constants';
+export const Constants = 'Constants';
 
-const Predicates = 'Predicates';
+export const Predicates = 'Predicates';
 
-const Functions = 'Functions';
+export const Functions = 'Functions';
 
-const Domain = 'Domain';
+export const Domain = 'Domain';
 
-const Tuples = 'Tuples';
+export const Tuples = 'Tuples';
 
-const Valuation = 'Valuation';
+export const Valuation = 'Valuation';
 
-const Substitution = 'Substitution';
+export const Substitution = 'Substitution';
 
-const Tff = 'tff';
+export const Tff = 'tff';
 
-module.exports = {
+export default [
   Term,
   FormulaStrict,
   FormulaWithPrecedence,
@@ -35,18 +35,4 @@ module.exports = {
   Valuation,
   Substitution,
   Tff,
-  'default': [
-    Term,
-    FormulaStrict,
-    FormulaWithPrecedence,
-    Clause,
-    Constants,
-    Predicates,
-    Functions,
-    Domain,
-    Tuples,
-    Valuation,
-    Substitution,
-    Tff,
-  ]
-}
+]

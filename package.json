@@ -1,12 +1,21 @@
 {
   "name": "@fmfi-uk-1-ain-412/js-fol-parser",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A JavaScript parser for first-order logic languages",
   "repository": "https://github.com/FMFI-UK-1-AIN-412/js-fol-parser",
   "files": [
     "dist/**"
   ],
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "author": {
     "name": "Milan Cifra"
   },
@@ -25,7 +34,7 @@
   "license": "ISC",
   "scripts": {
     "build:parser": "node scripts/build-parser.js",
-    "build:module": "npx kcd-scripts build --ignore '**/__tests__/**,**/__mocks__/**,**/*.pegjs'",
+    "build:module": "vite build && cpy src/index.d.ts dist/index.d.ts",
     "build": "npm run build:parser && npm run build:module",
     "lint": "npx kcd-scripts lint",
     "test": "npx kcd-scripts test"
@@ -35,11 +44,13 @@
     "@babel/core": "^7.13.0",
     "@babel/preset-env": "^7.13.0",
     "@babel/preset-typescript": "^7.13.0",
+    "cpy-cli": "^7.0.0",
     "cross-spawn": "^7.0.0",
     "jest-chance": "^0.1.8",
     "kcd-scripts": "^4.1.0",
-    "pegjs": "^0.10.0",
-    "typescript": "^4.2.0"
+    "peggy": "^5.0.6",
+    "typescript": "^4.2.0",
+    "vite": "^7.3.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.0"

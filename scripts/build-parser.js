@@ -18,10 +18,10 @@ const allowedStartRules =
   startRules.length === 0 ? [] :
     ['--allowed-start-rules', startRules.join(',')]
 
-const output = ['--output', outputModule]
+const output = ['--format', 'es', '--output', outputModule]
 
 const result = spawn.sync(
-  resolveBin('pegjs'),
+  resolveBin('peggy'),
   [...output, ...allowedStartRules, grammar],
   {stdio: 'inherit'},
 )
