@@ -497,7 +497,7 @@ tffVariable
         {return v}
 
 variable
-    = a:$[A-Za-z0-9_$]* WS
+    = a:upper_word WS
         {return factories.variable(a, ee)}
 
 tffTypedVariable
@@ -728,12 +728,12 @@ typeFunctor
     = a:atomicWord
 
 atomicWord
-    = lowerWord
+    = lower_word
 
     / singleQuoted
 
 definedType
-    =  "$" l:lowerWord
+    =  "$" l:lower_word
     {return l}
 
 typeConstant
@@ -881,7 +881,7 @@ systemFunctor
          {return a}
 
 atomicSystemWord
-    =  "$" "$"  l:lowerWord WS
+    =  "$" "$"  l:lower_word WS
          {return  factories.constant(l, ee)}
 
 number
@@ -933,8 +933,12 @@ integer_digits
 
 slash = '/'
 
-lowerWord
+lower_word
     =  a:($ (lower_alpha alpha_numeric*)) WS
+        {return a}
+
+upper_word
+    =  a:($ (upper_alpha alpha_numeric*)) WS
         {return a}
 
 sign
@@ -974,7 +978,7 @@ alpha_numeric
     = lower_alpha / upper_alpha / numeric / underscore
 
 definedFunctor
-    =  "$"  l:lowerWord WS
+    =  "$"  l:lower_word WS
          {return factories.constant(l, ee);}
 
 definedConstant
