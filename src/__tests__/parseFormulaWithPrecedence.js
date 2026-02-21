@@ -61,13 +61,13 @@ describe('atoms', () => {
     expect(() => parse('f(x)'))
       .toThrow(/equality symbol or non-equality symbol but end/);
     expect(() => parse('f(x,)'))
-      .toThrow(/"\(", constant truth value formula, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "f"/);
+      .toThrow(/"\(", a truth value constant, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "f"/);
     expect(() => parse('f(,x)'))
-      .toThrow(/"\(", constant truth value formula, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "f"/);
+      .toThrow(/"\(", a truth value constant, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "f"/);
     expect(() => parse('G(x,)'))
-      .toThrow(/"\(", constant truth value formula, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "G"/);
+      .toThrow(/"\(", a truth value constant, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "G"/);
     expect(() => parse('G(,x)'))
-      .toThrow(/"\(", constant truth value formula, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "G"/);
+      .toThrow(/"\(", a truth value constant, existential quantifier, negation symbol, predicate symbol, term, or universal quantifier but "G"/);
     expect(() => parse('f(x,y)')).toThrow(/1 argument to f but "f\(x,y\)"/);
     expect(() => parse('G(x)')).toThrow(/2 arguments to G/);
     expect(() => parse('aFunction(1,c)')).toThrow(/4 arguments/);

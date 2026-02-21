@@ -408,7 +408,7 @@ EmptyClause
     / "\\qed" ! IdentifierPart
     
 AlwaysTrueSymbol
-    "always true formula symbol"
+    "the truth constant"
     = "⊤"
     / "\\T" ! IdentifierPart
     / "\\True" ! IdentifierPart
@@ -416,7 +416,7 @@ AlwaysTrueSymbol
     / "\\true" ! IdentifierPart
 
 AlwaysFalseSymbol
-    "always false formula symbol"
+    "the falsity constant"
     = "⊥"
     / "_|_"
     / "\\F" ! IdentifierPart

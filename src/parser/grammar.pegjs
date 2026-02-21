@@ -65,7 +65,7 @@ EqNeqSymbol
         }
 
 ConstantValueFormula
-    "constant truth value formula"
+    "a truth value constant"
     = AlwaysTrueSymbol
         { return factories.true(ee) }
     / AlwaysFalseSymbol
@@ -303,7 +303,7 @@ EmptyClause
     / "\\qed" ! IdentifierPart
 
 AlwaysTrueSymbol
-    "always true formula symbol"
+    "the truth constant"
     = "⊤"
     / "\\T" ! IdentifierPart
     / "\\True" ! IdentifierPart
@@ -311,7 +311,7 @@ AlwaysTrueSymbol
     / "\\true" ! IdentifierPart
 
 AlwaysFalseSymbol
-    "always false formula symbol"
+    "the falsity constant"
     = "⊥"
     / "_|_"
     / "\\F" ! IdentifierPart
